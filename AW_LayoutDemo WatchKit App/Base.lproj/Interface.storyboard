@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AW_LayoutDemo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" layout="vertical" spacing="2" id="lx9-4T-gmB">
+                            <items>
+                                <group width="0.94999999999999996" alignment="center" id="TuG-cx-uUV">
+                                    <items>
+                                        <label alignment="left" text="cocoa-beans" id="zF9-hR-ctf">
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                        </label>
+                                        <label alignment="right" text="13m" id="a3P-3B-7sb">
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <imageView alignment="left" image="cocoa-beans" id="hnl-Vb-R4s"/>
+                            </items>
+                            <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                        <button alignment="left" id="BAF-Lj-aM3">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="KEl-cz-XZ4">
+                                <items>
+                                    <label alignment="left" text="Cocoa-beans — проект, посвященный различным аспектам разработки для устройств Apple экосистемы." id="rz4-38-1ZK">
+                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                    </label>
+                                    <label alignment="left" hidden="YES" text="Cocoa-beans — проект, посвященный различным аспектам разработки для устройств Apple экосистемы." numberOfLines="0" id="Ujn-Lg-QTI">
+                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                    </label>
+                                    <label alignment="left" text="Показать" id="EUk-qM-BfE">
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                    </label>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="onMoreButton" destination="AgC-eL-Hgc" id="kCo-fs-cTV"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="collapsedCommentLbl" destination="rz4-38-1ZK" id="QgP-za-eRg"/>
+                        <outlet property="expandedCommentLbl" destination="Ujn-Lg-QTI" id="Nj5-J2-3ZN"/>
+                        <outlet property="moreLbl" destination="EUk-qM-BfE" id="boB-2M-q6B"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>

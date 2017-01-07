@@ -12,20 +12,19 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
+    @IBOutlet var collapsedCommentLbl: WKInterfaceLabel!
+    @IBOutlet var expandedCommentLbl: WKInterfaceLabel!
+    @IBOutlet var moreLbl: WKInterfaceLabel!
+    
+    var expanded = false
+    
+    @IBAction func onMoreButton() {
         
-        // Configure interface objects here.
+        expanded = !expanded
+        
+        collapsedCommentLbl.setHidden(expanded)
+        expandedCommentLbl.setHidden(!expanded)
+        
+        moreLbl.setText(expanded ? "Скрыть" : "Показать")
     }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
 }
